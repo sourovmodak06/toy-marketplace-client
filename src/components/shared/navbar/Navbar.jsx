@@ -1,6 +1,6 @@
 import React from "react";
-import logo from "../../../../public/images/logo.png";
 import { Link } from "react-router-dom";
+import Logo from "../logo/Logo";
 
 const Navbar = () => {
   const navItems = (
@@ -9,16 +9,16 @@ const Navbar = () => {
         <Link to={"/"}>Home</Link>
       </li>
       <li>
-        <Link to={"/"}>All Toys</Link>
+        <Link to={"/allToys"}>All Toys</Link>
       </li>
       <li>
-        <Link to={"/"}>My Toys</Link>
+        <Link to={"/myToys"}>My Toys</Link>
       </li>
       <li>
-        <Link to={"/"}>Add A Toy</Link>
+        <Link to={"/addToy"}>Add A Toy</Link>
       </li>
       <li>
-        <Link to={"/"}>Blogs</Link>
+        <Link to={"/blogs"}>Blogs</Link>
       </li>
     </>
   );
@@ -50,9 +50,11 @@ const Navbar = () => {
               {navItems}
             </ul>
           </div>
-          <a className="">
-            <img src={logo} alt="logo" className="w-28 md:w-32" />
-          </a>
+          <div>
+          <Link to={"/"}>
+            <Logo></Logo>
+          </Link>
+          </div>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navItems}</ul>
