@@ -1,14 +1,45 @@
-import React from "react";
+import React, { useContext } from "react";
 import useTitle from "../shared/hooks/useTitle";
 import login from "/images/login.jpg";
 import { Link } from "react-router-dom";
 import { FaGoogle } from "react-icons/fa";
+import { AuthContext } from "../../providers/AuthProviders";
 
 
 
 
 const LogIn = () => {
   useTitle("LogIn");
+  const {signIn,googleCreateUser} = useContext(AuthContext);
+
+  const handleLogin = (e) =>{
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    signIn(email,password)
+    .then(() => {
+      alert("Successfully Login by Email");
+      form.reset();
+    })
+    .catch(error => {
+      alert(error.message);
+    })
+  }
+  const handleGoogleSignIn = () => {
+    googleCreateUser()
+    .then(()=>{
+      alert("Successfully Login by Google");
+    })
+    .catch(error => {
+      alert(error.message);
+    })
+  }
+
+
+
+
   return (
     <div>
       <div className="flex flex-col-reverse md:flex-row items-center">
@@ -19,7 +50,7 @@ const LogIn = () => {
               <h2 className="text-center text-3xl font-bold text-white">
                 Log In
               </h2>
-              <form>
+              <form onSubmit={handleLogin}>
                 <div className="form-control">
                   <label className="label ml-10 md:ml-16">
                     <span className="label-text text-white text-xl md:text-2xl font-light">
@@ -70,7 +101,7 @@ const LogIn = () => {
                   </div>
                 </div>
                 <div className="flex justify-center">
-                    <FaGoogle className="bg-[#ffc600] text-5xl text-[#385a64] mt-4 p-2 border-2 rounded-full cursor-pointer"></FaGoogle>
+                    <FaGoogle onClick={handleGoogleSignIn} className="bg-[#ffc600] text-5xl text-[#385a64] mt-4 p-2 border-2 rounded-full cursor-pointer"></FaGoogle>
                 </div>
               </form>
             </div>
