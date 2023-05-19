@@ -16,7 +16,7 @@ const Gallery = () => {
   }, []);
   return (
     <div>
-      <h2 className="text-center underline underline-offset-8 pb-5 text-[#ffc600] text-4xl font-semibold uppercase">
+      <h2 className="text-center underline decoration-wavy decoration-yellow-300 underline-offset-4 pb-5 text-[#385a64] text-4xl font-semibold uppercase">
         Our Gallery
       </h2>
 
