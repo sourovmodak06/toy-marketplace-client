@@ -23,8 +23,8 @@ const Gallery = () => {
       <div className="gallery">
         {loading ? (
           <div>
-            {photos.map(() => (
-              <div className="border border-slate-400 shadow rounded-lg m-5 max-w-sm w-full mx-auto">
+            {photos.map((item) => (
+              <div key={item._id} className="border border-slate-400 shadow rounded-lg m-5 max-w-sm w-full mx-auto">
                 <div className="animate-pulse relative">
                   <div className=" h-[50vh] bg-slate-700 rounded-md"></div>
                   <FaHeart className="absolute bottom-2 text-2xl right-4"></FaHeart>
