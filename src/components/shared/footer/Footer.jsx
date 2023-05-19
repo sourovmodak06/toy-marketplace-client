@@ -12,10 +12,10 @@ import {
   FaTwitter,
   FaWhatsapp,
 } from "react-icons/fa";
-import daraz from "../../../../public/images/daraz.png";
-import redx from "../../../../public/images/redx.svg";
-import pandamart from "../../../../public/images/pandamart.png";
-import fedex from "../../../../public/images/fedex.png";
+import daraz from "/images/daraz.png";
+import redx from "/images/redx.svg";
+import pandamart from "/images/pandamart.png";
+import fedex from "/images/fedex.png";
 
 const Footer = () => {
   const year = new Date().getFullYear();
