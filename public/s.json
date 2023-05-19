@@ -1,0 +1,50 @@
+[
+  {
+    "picture": "https://i.ibb.co/qD5rNxY/Batman.jpg",
+    "name": "Batman",
+    "price": 140,
+    "rating": 5
+  },
+  {
+    "picture": "https://i.ibb.co/SxJTTsh/Wonder-Woman.jpg",
+    "name": "Wonder Woman",
+    "price": 110,
+    "rating": 4.5
+  },
+  {
+    "picture": "https://i.ibb.co/QjfXH9p/The-Flash.jpg",
+    "name": "The Flash",
+    "price": 150,
+    "rating": 5
+  },
+  {
+    "picture": "https://i.ibb.co/tqgRHQT/Shazam.jpg",
+    "name": "Shazam",
+    "price": 200,
+    "rating": 4.5
+  },
+  {
+    "picture": "https://i.ibb.co/ckkKgR5/Joker.jpg",
+    "name": "Joker",
+    "price": 200,
+    "rating": 4.5
+  },
+  {
+    "picture": "https://i.ibb.co/J2sYpn3/Cyborg.jpg",
+    "name": "Cyborg",
+    "price": 200,
+    "rating": 4.5
+  },
+  {
+    "picture": "https://i.ibb.co/YQY7Z3h/Deathstroke.jpg",
+    "name": "Deathstroke",
+    "price": 200,
+    "rating": 4.5
+  },
+  {
+    "picture": "https://i.ibb.co/RbqVKcc/Martian-Manhunter.jpg",
+    "name": "Martian Manhunter",
+    "price": 90,
+    "rating": 5
+  }
+]

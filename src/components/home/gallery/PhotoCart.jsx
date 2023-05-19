@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import { FaHeart } from "react-icons/fa";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const PhotoCart = ({ item }) => {
-  const [clicked, setClicked] = useState(false);
+  const [clicked, setClicked] = useState(true);
 
   const handleClick = () => {
-    setClicked(true);
-    alert("Added To The Favorite Item");
+    setClicked(false);
+    toast.success("Added To The Favorite Item");
   };
   return (
     <div className="m-5 relative">
+      <ToastContainer theme="colored" />
       <img src={item.photo} alt="img" className="max-w-full rounded-md" />
       <div onClick={handleClick} disabled={clicked}>
         {clicked ? (

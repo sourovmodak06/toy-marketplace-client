@@ -14,7 +14,7 @@ const Suggest = () => {
         It's never been easier to invest in your kid's toys
       </h2>
       <div className="flex flex-col gap-4 md:gap-10">
-        <div data-aos="fade-up-left" data-aos-delay="50" data-aos-duration="1000" data-aos-offset="300">
+        <div data-aos="fade-up-left" data-aos-delay="50" data-aos-duration="1000" data-aos-offset="200">
           <div className="flex flex-col md:flex-row-reverse md:relative">
             <img src={img1} alt="img" className="h-96 md:w-1/2 border-4 border-yellow-300"/>
             <div className="md:absolute md:top-1/4 md:right-[40%] bg-white md:w-1/2 py-10 px-5 md:rounded-3xl">
@@ -23,7 +23,7 @@ const Suggest = () => {
             </div>
           </div>
         </div>
-        <div data-aos="fade-up-right" data-aos-delay="50" data-aos-duration="1000" data-aos-offset="300">
+        <div data-aos="fade-up-right" data-aos-delay="50" data-aos-duration="1000" data-aos-offset="200">
           <div className="flex flex-col md:flex-row md:relative">
             <img src={img2} alt="img" className="h-96 md:w-1/2 border-4 border-yellow-300"/>
             <div className="md:absolute md:top-1/4 md:left-[40%] bg-white md:w-1/2 py-10 px-5 md:rounded-3xl">

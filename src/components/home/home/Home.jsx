@@ -5,6 +5,7 @@ import Gallery from "../gallery/Gallery";
 import Suggest from "../suggest/Suggest";
 import PopularProducts from "../popularProducts/PopularProducts";
 import Discount from "../discount/Discount";
+import CategoryTabs from "../categoryTabs/CategoryTabs";
 
 const Home = () => {
   useTitle('Home');
@@ -12,6 +13,7 @@ const Home = () => {
     <div>
       <Carousel></Carousel>
       <Gallery></Gallery>
+      <CategoryTabs></CategoryTabs>
       <Suggest></Suggest>
       <PopularProducts></PopularProducts>
       <Discount></Discount>
