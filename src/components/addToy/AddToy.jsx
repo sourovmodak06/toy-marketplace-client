@@ -42,8 +42,8 @@ const AddToy = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data.insertedId) {
+          form.reset();
           toast.success("Successfully Added Information");
         }
       });
