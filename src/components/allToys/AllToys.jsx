@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import useTitle from "../shared/hooks/useTitle";
 import { useLoaderData } from "react-router-dom";
 import TableInfo from "./TableInfo";
@@ -8,12 +8,33 @@ const AllToys = () => {
   useTitle("All Toy");
   const toys = useLoaderData();
 
+  const [toyData, setToyData] = useState([]);
+  const [searchApiData, setSearchApiData] = useState([]);
+  const [filterValue, setFilterValue] = useState('');
+  useEffect(() => {
+    setToyData(toys);
+    setSearchApiData(toys);
+  },[])
+  const handleFilter = (e) => {
+    if (e.target.value == '') {
+      setToyData(searchApiData)
+    }else{
+      const filterResult = searchApiData.filter(item => item.toyName.toLowerCase().includes(e.target.value.toLowerCase()))
+      if (filterResult.length > 0) {
+        setToyData(filterResult);
+      }else{
+        setToyData([{"toyName" : "No Data Found"}])
+      }
+    }
+    setFilterValue(e.target.value);
+  }
+
   const [currentPage,setCurrentPage] = useState(1);
   const recordsPerPage = 20;
   const lastIndex = currentPage * recordsPerPage;
   const firstIndex = lastIndex - recordsPerPage;
-  const records = toys.slice(firstIndex,lastIndex);
-  const npage = Math.ceil(toys.length / recordsPerPage);
+  const records = toyData.slice(firstIndex,lastIndex);
+  const npage = Math.ceil(toyData.length / recordsPerPage);
   const number = [...Array(npage + 1).keys()].slice(1);
 
 
@@ -33,6 +54,11 @@ const AllToys = () => {
   
   return (
     <div className="px-10">
+
+      <div className="flex justify-center py-10">
+        <input type="search" className="input input-bordered" placeholder="Enter Toy Name..." value={filterValue} onInput={(e) => handleFilter(e)} />
+      </div>
+
       <div className="overflow-x-auto w-full">
         <table className="table w-full">
           <thead>
@@ -54,8 +80,8 @@ const AllToys = () => {
       </div>
       <div className="flex justify-center py-2">
         <ul className="flex items-center gap-4">
-          <li className="btn">
-            <button onClick={perPage}><FaCaretLeft></FaCaretLeft></button>
+          <li>
+            <button className="btn" onClick={perPage}><FaCaretLeft></FaCaretLeft></button>
           </li>
           {
             number.map((n,i) => (
@@ -64,8 +90,8 @@ const AllToys = () => {
               </li>
             ))
           }
-          <li className="btn">
-            <button onClick={nextPage}><FaCaretRight></FaCaretRight></button>
+          <li>
+            <button className="btn" onClick={nextPage}><FaCaretRight></FaCaretRight></button>
           </li>
         </ul>
       </div>
