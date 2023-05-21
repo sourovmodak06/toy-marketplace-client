@@ -12,7 +12,7 @@ const MyToys = () => {
   const [myToysInfo, setMyToysInfo] = useState(toys)
 
   useEffect(() => {
-    fetch(`http://localhost:5000/toy/${name}`)
+    fetch(`https://superherotoystore-server-side.vercel.app/toy/${name}`)
       .then((res) => res.json())
       .then((data) => {
         setToys(data);

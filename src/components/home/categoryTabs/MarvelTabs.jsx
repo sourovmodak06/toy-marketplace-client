@@ -12,7 +12,7 @@ const MarvelTabs = () => {
   const [modalInfo, setModalInfo] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/marvelCategory")
+    fetch("https://superherotoystore-server-side.vercel.app/marvelCategory")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);

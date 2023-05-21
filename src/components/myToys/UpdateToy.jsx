@@ -47,7 +47,7 @@ const UpdateToy = () => {
     };
     console.log(updateInfo);
 
-    fetch(`http://localhost:5000/addToy/${_id}`, {
+    fetch(`https://superherotoystore-server-side.vercel.app/addToy/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

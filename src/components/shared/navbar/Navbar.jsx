@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../logo/Logo";
 import { AuthContext } from "../../../providers/AuthProviders";
+import ActiveLink from "../../ActiveLink";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -14,23 +15,23 @@ const Navbar = () => {
   const navItems = (
     <>
       <li>
-        <Link to={"/"}>Home</Link>
+        <ActiveLink to={"/"}>Home</ActiveLink>
       </li>
       <li>
-        <Link to={"/allToys"}>All Toys</Link>
+        <ActiveLink to={"/allToys"}>All Toys</ActiveLink>
       </li>
       {user && (
         <>
           <li>
-            <Link to={"/myToys"}>My Toys</Link>
+            <ActiveLink to={"/myToys"}>My Toys</ActiveLink>
           </li>
           <li>
-            <Link to={"/addToy"}>Add A Toy</Link>
+            <ActiveLink to={"/addToy"}>Add A Toy</ActiveLink>
           </li>
         </>
       )}
       <li>
-        <Link to={"/blogs"}>Blogs</Link>
+        <ActiveLink to={"/blogs"}>Blogs</ActiveLink>
       </li>
     </>
   );
@@ -69,7 +70,7 @@ const Navbar = () => {
           </div>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">{navItems}</ul>
+          <ul className="menu menu-horizontal px-1 flex gap-4">{navItems}</ul>
         </div>
         <div className="navbar-end">
           {user ? (
@@ -99,9 +100,9 @@ const Navbar = () => {
               </button>
             </>
           ) : (
-            <Link className="btn" to={"/login"}>
+            <ActiveLink to={"/login"}>
               Log In
-            </Link>
+            </ActiveLink>
           )}
         </div>
       </div>

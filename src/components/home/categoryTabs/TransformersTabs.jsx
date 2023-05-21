@@ -11,7 +11,7 @@ const TransformersTabs = () => {
   const [modalInfo, setModalInfo] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/transformerCategory")
+    fetch("https://superherotoystore-server-side.vercel.app/transformerCategory")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);

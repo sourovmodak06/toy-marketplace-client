@@ -33,7 +33,7 @@ const AddToy = () => {
     };
     console.log(info);
 
-    fetch("http://localhost:5000/addToy", {
+    fetch("https://superherotoystore-server-side.vercel.app/addToy", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -68,7 +68,7 @@ const AddToy = () => {
                 type="url"
                 name="toyUrl"
                 placeholder="Picture URL"
-                className="input input-bordered"
+                className="input input-bordered border-green-500"
                 required
               />
             </div>
@@ -82,7 +82,7 @@ const AddToy = () => {
                 type="text"
                 name="toyName"
                 placeholder="Toy Name"
-                className="input input-bordered"
+                className="input input-bordered border-green-500"
                 required
               />
             </div>
@@ -97,7 +97,7 @@ const AddToy = () => {
                   type="text"
                   name="sellerName"
                   value={user.displayName}
-                  className="input input-bordered"
+                  className="input input-bordered border-yellow-500"
                   readOnly
                 />
               </div>
@@ -111,7 +111,7 @@ const AddToy = () => {
                   type="url"
                   name="sellerPhoto"
                   value={user.photoURL}
-                  className="input input-bordered"
+                  className="input input-bordered border-yellow-500"
                   readOnly
                 />
               </div>
@@ -127,7 +127,7 @@ const AddToy = () => {
                   type="email"
                   name="email"
                   value={user.email}
-                  className="input input-bordered"
+                  className="input input-bordered border-yellow-500"
                   readOnly
                 />
               </div>
@@ -137,7 +137,7 @@ const AddToy = () => {
                     Select Category
                   </span>
                 </label>
-                <select name="toyCategory" className="input input-bordered">
+                <select name="toyCategory" className="input input-bordered border-green-500">
                   <option value="marvel">Marvel</option>
                   <option value="star-wars">Star Wars</option>
                   <option value="transformers">Transformers</option>
@@ -154,7 +154,7 @@ const AddToy = () => {
                   type="number"
                   name="price"
                   placeholder="Price"
-                  className="input input-bordered"
+                  className="input input-bordered border-green-500"
                   required
                 />
               </div>
@@ -168,7 +168,7 @@ const AddToy = () => {
                   type="number"
                   name="rating"
                   placeholder="Rating"
-                  className="input input-bordered"
+                  className="input input-bordered border-green-500"
                   required
                 />
               </div>
@@ -182,14 +182,14 @@ const AddToy = () => {
                   type="number"
                   name="quantity"
                   placeholder="Available Quantity"
-                  className="input input-bordered"
+                  className="input input-bordered border-green-500"
                   required
                 />
               </div>
             </div>
             <textarea
               name="description"
-              className="textarea textarea-bordered w-full my-5"
+              className="textarea textarea-bordered w-full my-5 border-green-500"
               placeholder="Detail description"
               required
             ></textarea>

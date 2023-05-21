@@ -11,7 +11,7 @@ const DCTabs = () => {
   const [modalInfo, setModalInfo] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/dcCategory")
+    fetch("https://superherotoystore-server-side.vercel.app/dcCategory")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);

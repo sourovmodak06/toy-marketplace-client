@@ -16,7 +16,7 @@ const PhotoCart = ({ item }) => {
       <img src={item.photo} alt="img" className="max-w-full rounded-md" />
       <div onClick={handleClick} disabled={clicked}>
         {clicked ? (
-          <FaHeart className="absolute bottom-2 text-2xl right-4 text-red-50"></FaHeart>
+          <FaHeart className="absolute bottom-2 text-2xl right-4 text-red-300"></FaHeart>
         ) : (
           <FaHeart className="absolute bottom-2 text-2xl right-4 text-red-700"></FaHeart>
         )}

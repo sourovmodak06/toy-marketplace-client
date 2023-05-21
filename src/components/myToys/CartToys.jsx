@@ -29,7 +29,7 @@ const CartToys = ({ toy, myToysInfo, setMyToysInfo }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/toy/${_id}`,{
+        fetch(`https://superherotoystore-server-side.vercel.app/toy/${_id}`,{
           method: 'DELETE',
         })
           .then((res) => res.json())

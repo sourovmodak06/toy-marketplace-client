@@ -5,28 +5,28 @@ import { RxDotFilled } from "react-icons/rx";
 const Carousel = () => {
   const slides = [
     {
-      url: "https://i.ibb.co/B4C3vdw/lucas-hoang-h2x-G7-FQbmc-I-unsplash.jpg",
+      url: "https://i.ibb.co/0Gs2b8L/DST-Marvel-Select-Movie-Doctor-Strange-Banner.jpg",
       title: "Doctor Strange",
       text: "Doctor Strange, the Sorcerer Supreme, wields mystical powers to protect the realms from supernatural threats.",
     },
     {
-      url: "https://i.ibb.co/6r1rQ69/yulia-matvienko-kgz9vs-P5-JCU-unsplash.jpg",
+      url: "https://i.ibb.co/b3zpG13/Batman-Superman-Worlds-Finest-8-4-Banner-scaled.jpg",
       title: "Superman vs Batman",
       text: "Superman and Batman, two legendary heroes, clash in an epic battle that tests their strength and ideologies.",
     },
     {
-      url: "https://i.ibb.co/wLJMDtt/studbee-gs-Coqz38-QSs-unsplash.jpg",
+      url: "https://i.ibb.co/jffP8h9/JAD98037-Batman-Arkham-Knight-Batmobile.webp",
       title: "Batman",
       text: "Batman, the Dark Knight, patrols Gotham City, using his intelligence, gadgets, and combat skills to fight crime.",
     },
 
     {
-      url: "https://i.ibb.co/h2Hzqv4/nyusha-svoboda-z-D-7l-HVk-OYE-unsplash.jpg",
+      url: "https://i.ibb.co/FzrhBnD/18675324-10212980702972773-366369504-o-scaled-600.jpg",
       title: "A Star Wars Story",
       text: "A Star Wars Story transports us to captivating new adventures within the vast and beloved Star Wars universe.",
     },
     {
-      url: "https://i.ibb.co/D5998m0/y-nasx-cbd-Bz-EOWHQE-unsplash.jpg",
+      url: "https://i.ibb.co/5LfSF5C/mb-story-the-avengers-launch-2x.jpg",
       title: "The Avengers",
       text: "The Avengers, Earth's mightiest heroes, assemble to defend the world against formidable threats and save the day.",
     },

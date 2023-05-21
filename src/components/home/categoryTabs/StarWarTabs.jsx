@@ -11,7 +11,7 @@ const StarWarTabs = () => {
   const [modalInfo, setModalInfo] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/starWarCategory")
+    fetch("https://superherotoystore-server-side.vercel.app/starWarCategory")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);

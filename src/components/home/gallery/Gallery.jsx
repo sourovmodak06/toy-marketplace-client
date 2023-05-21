@@ -10,7 +10,7 @@ const Gallery = () => {
   
 
   useEffect(() => {
-    fetch("http://localhost:5000/gallery")
+    fetch("https://superherotoystore-server-side.vercel.app/gallery")
       .then((res) => res.json())
       .then((data) => setPhotos(data));
   }, []);
