@@ -1,8 +1,9 @@
 import React from "react";
 import { FaPenSquare, FaRegTrashAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
-const CartToys = ({ toy }) => {
+const CartToys = ({ toy, myToysInfo, setMyToysInfo }) => {
   const {
     _id,
     toyUrl,
@@ -40,6 +41,8 @@ const CartToys = ({ toy }) => {
                 'Your Toy has been deleted.',
                 'success'
               )
+              const remaining = myToysInfo.filter(i => i._id !== _id);
+              setMyToysInfo(remaining);
             }
           });
       }
@@ -96,7 +99,9 @@ const CartToys = ({ toy }) => {
           </div>
         </td>
         <td>
+          <Link to={`/updateToy/${_id}`}>
           <FaPenSquare className="text-3xl cursor-pointer"></FaPenSquare>
+          </Link>
           <FaRegTrashAlt
             className="text-3xl text-red-500 mt-3 cursor-pointer"
             onClick={() => handleDelete(_id)}

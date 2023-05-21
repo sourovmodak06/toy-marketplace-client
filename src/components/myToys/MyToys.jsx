@@ -9,6 +9,7 @@ const MyToys = () => {
   const { user } = useContext(AuthContext);
   const name = user.displayName;
 
+  const [myToysInfo, setMyToysInfo] = useState(toys)
 
   useEffect(() => {
     fetch(`http://localhost:5000/toy/${name}`)
@@ -38,7 +39,7 @@ const MyToys = () => {
           </thead>
           <tbody>
             {toys.map((toy) => (
-              <CartToys key={toy._id} toy={toy}></CartToys>
+              <CartToys key={toy._id} toy={toy} myToysInfo={myToysInfo} setMyToysInfo={setMyToysInfo}></CartToys>
             ))}
           </tbody>
         </table>
