@@ -1,8 +1,10 @@
 import React from "react";
 import { FaPenSquare, FaRegTrashAlt } from "react-icons/fa";
+import Swal from "sweetalert2";
 
 const CartToys = ({ toy }) => {
   const {
+    _id,
     toyUrl,
     toyName,
     sellerName,
@@ -14,6 +16,36 @@ const CartToys = ({ toy }) => {
     quantity,
     description,
   } = toy;
+
+  const handleDelete = (_id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/toy/${_id}`,{
+          method: 'DELETE',
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if (data.deletedCount > 0) {
+              Swal.fire(
+                'Deleted!',
+                'Your Toy has been deleted.',
+                'success'
+              )
+            }
+          });
+      }
+    });
+  };
+
   return (
     <>
       <tr>
@@ -54,12 +86,21 @@ const CartToys = ({ toy }) => {
         <td>
           <h2>{quantity}</h2>
         </td>
-        <td >
-          <div>{description.length > 1000 ? <h2>{description}</h2> : <h2>{description.slice(0,10)}...</h2>}</div>
+        <td>
+          <div>
+            {description.length > 1000 ? (
+              <h2>{description}</h2>
+            ) : (
+              <h2>{description.slice(0, 10)}...</h2>
+            )}
+          </div>
         </td>
         <td>
-            <FaPenSquare className="text-3xl"></FaPenSquare>
-            <FaRegTrashAlt className="text-3xl text-red-500 mt-3"></FaRegTrashAlt>
+          <FaPenSquare className="text-3xl cursor-pointer"></FaPenSquare>
+          <FaRegTrashAlt
+            className="text-3xl text-red-500 mt-3 cursor-pointer"
+            onClick={() => handleDelete(_id)}
+          ></FaRegTrashAlt>
         </td>
       </tr>
     </>
