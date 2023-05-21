@@ -1,14 +1,18 @@
 import React, { useContext } from "react";
 import useTitle from "../shared/hooks/useTitle";
 import login from "/images/login.jpg";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../../providers/AuthProviders";
+import { ToastContainer, toast } from "react-toastify";
 
 
 
 
 const LogIn = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || '/';
   useTitle("LogIn");
   const {signIn,googleCreateUser} = useContext(AuthContext);
 
@@ -20,20 +24,22 @@ const LogIn = () => {
 
     signIn(email,password)
     .then(() => {
-      alert("Successfully Login by Email");
+      toast.success("Successfully Login by Email");
       form.reset();
+      navigate(from, {replace: true})
     })
     .catch(error => {
-      alert(error.message);
+      toast.error(error.message);
     })
   }
   const handleGoogleSignIn = () => {
     googleCreateUser()
     .then(()=>{
-      alert("Successfully Login by Google");
+      toast.success("Successfully Login by Google");
+      navigate(from, {replace: true})
     })
     .catch(error => {
-      alert(error.message);
+      toast.error(error.message);
     })
   }
 
@@ -42,6 +48,7 @@ const LogIn = () => {
 
   return (
     <div>
+      <ToastContainer theme="colored" />
       <div className="flex flex-col-reverse md:flex-row items-center">
         <img src={login} alt="Login img" className="md:w-1/2" />
         <div className="bg-[#385a64] md:h-[90vh] w-full md:rounded-tl-full md:rounded-bl-full md:border-t-4 md:border-b-4 md:border-l-4 border-[#ffc600] py-8 md:py-0">

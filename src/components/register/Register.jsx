@@ -3,6 +3,7 @@ import useTitle from "../shared/hooks/useTitle";
 import { Link } from "react-router-dom";
 import register from "/images/register.jpg";
 import { AuthContext } from "../../providers/AuthProviders";
+import { ToastContainer, toast } from "react-toastify";
 
 const Register = () => {
   useTitle("Register");
@@ -18,28 +19,29 @@ const Register = () => {
 
     const regExp = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/
     if (!regExp.test(password)) {
-      alert("Minimum six characters, at least one letter and one number");
+      toast.error("Minimum six characters, at least one letter and one number");
       return;
     }
 
     createUser(email, password)
     .then((result) => {
       const user = result.user;
-      console.log(user);
+      // console.log(user);
       profileUpdate(name,photo)
       .then()
       .catch(error => {
-        alert(error.message);
+        toast.error(error.message);
       })
-      alert("Successfully Register")
+      toast.success("Successfully Register")
       form.reset();
     })
     .catch(error => {
-      console.log(error.message);
+      toast.error(error.message);
     })
   }
   return (
     <div>
+       <ToastContainer theme="colored" />
       <div className="flex flex-col-reverse md:flex-row items-center">
         <img src={register} alt="Login img" className="md:w-1/2" />
         <div className="bg-[#385a64] md:h-[100vh] w-full md:rounded-tl-full md:rounded-bl-full md:border-t-4 md:border-b-4 md:border-l-4 border-[#ffc600] py-8 md:pl-10 md:py-0">

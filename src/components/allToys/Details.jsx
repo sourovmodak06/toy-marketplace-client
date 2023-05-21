@@ -1,8 +1,10 @@
 import React from "react";
-import { Link, useLoaderData } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import { FaRegEnvelope, FaStar, FaUser } from "react-icons/fa";
+import useTitle from "../shared/hooks/useTitle";
 
 const Details = () => {
+  useTitle("Details");
   const detailsInfo = useLoaderData();
   const {
     toyUrl,
@@ -75,9 +77,6 @@ const Details = () => {
             </div>
           </div>
         </div>
-      </div>
-      <div>
-        {/* <Link className="btn"></Link> */}
       </div>
     </div>
   );
